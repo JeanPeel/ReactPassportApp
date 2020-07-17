@@ -15,7 +15,7 @@ const flash = require('express-flash')
 const session = require('express-session')
 const methodOverride = require('method-override')
 
-const H = require('./models/H');
+const Habit = require('./models/Habit');
 
 const initializePassport = require('./passport-config')
 initializePassport(
@@ -28,7 +28,8 @@ mongoose.Promise = global.Promise;
 
 let MONGODB_URI = process.env.NODE_ENV
     ? process.env.MONGODB_URI
-    : "mongodb://<dbuser>:<dbpassword>@ds141490.mlab.com:41490/heroku_bwqsgrdb";
+    : "mongodb://localhost/HabitTracker";
+    // : "mongodb://<dbuser>:<dbpassword>@ds141490.mlab.com:41490/heroku_bwqsgrdb";
 
 mongoose.connect(MONGODB_URI, {
     useNewUrlParser: true,
@@ -54,10 +55,10 @@ app.delete("/:id", (request, response) => {
       });
 });
 
-app.post("/HT", (request, response) => {
-  const HD = request.body;
-  console.log('is this working?', HD)
-  H.create(HD, function () {
+app.post("/HabitTracker", (request, response) => {
+  const HabitData = request.body;
+  console.log('is this working?', HabitData)
+  Habit.create(HabitData, function () {
       response.status(200).end();
   })
 });
@@ -70,14 +71,14 @@ app.put('/api/updateScore/:id', function (req, res) {
           req.body :${JSON.stringify(req.body)}
           req.params: ${req.params.id}
           `)
-  H.updateOne({ _id: req.params.id }, { score: req.body.score })
+          Habit.updateOne({ _id: req.params.id }, { score: req.body.score })
       .then(data => {
           res.json(data)
       })
 
 })
 
-app.get('/api/SH', function (req, res) {
+app.get('/api/sortedHabits', function (req, res) {
   console.log(`
           sorted get route /api/
           
@@ -85,7 +86,7 @@ app.get('/api/SH', function (req, res) {
           req.params: ${req.params.id}
           `)
 
-  H.find({})
+          Habit.find({})
       // .limit(10)
       // .sort('score')
       .then(data => {
@@ -98,8 +99,8 @@ app.get('/api/SH', function (req, res) {
 
 });
 
-app.get("/HT", (request, response) => {
-  H.find({})
+app.get("/HabitTracker", (request, response) => {
+  Habit.find({})
       .then(function (data) {
           response.status(200).json(data);
       })
@@ -115,10 +116,10 @@ function sendIndex(request, response) {
 }
 
 app
-  .get("/F", sendIndex)
-  .get("/H", sendIndex)
-  .get("/L", sendIndex)
-  .get("/Login", sendIndex);
+.get("/Form", sendIndex)
+.get("/Habits", sendIndex)
+.get("/Leaderboard", sendIndex)
+.get("/Login", sendIndex);
 
 
 app.set('view-engine', 'ejs')
