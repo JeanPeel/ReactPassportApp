@@ -7,7 +7,7 @@ function Footer() {
         <div className="footer">
             <div className="container">
                 <div>
-                     <img className="logo3 "src={require("../Header/habitTracker.gif")} alt="loading"  />
+                     <img className="logo3 "src={require("../../Images/habitTracker.gif")} alt="loading"  />
                 </div>
             </div>
         </div>

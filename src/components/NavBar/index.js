@@ -8,7 +8,7 @@ function NavBar() {
         <nav className="navbar navbar-expand-lg text-light">
             <div className="container">
                 <div>
-                    <img src={require("../NavBar/logo2.png")} alt="loading" className="logo2" />
+                    <img src={require("../../Images/logo2.png")} alt="loading" className="logo2" />
                 </div>
 
                 <div>

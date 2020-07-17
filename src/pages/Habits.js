@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import HabitList from "../components/HabitList/HabitList";
+import HabitList from "../components/HabitList";
 import axios from 'axios';
 
 import NavBar from "../components/NavBar";
