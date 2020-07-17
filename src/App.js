@@ -7,8 +7,9 @@ import Home from "./pages/Home";
 import Account from "./pages/Account/index.js";
 import Login from "./pages/Account/login.js";
 import Register from "./pages/Account/register.js";
-// import Blog from "./pages/Blog";
-// import Connect from "./pages/Connect";
+import Form from "./pages/Form";
+import Habits from "./pages/Habits";
+import Leaderboard from "./pages/Leaderboard";
 
 import './App.css';
 
@@ -20,8 +21,9 @@ function App() {
         <Route exact path="/account" component={Account} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
-        {/* <Route exact path="/blog" component={Blog} />
-        <Route exact path="/connect" component={Connect} /> */}
+        <Route exact path="/habits" component={Habits} />
+      <Route exact path="/form" component={Form} />
+      <Route exact path="/leaderboard" component={Leaderboard} />
       </div>
     </Router>
   );
