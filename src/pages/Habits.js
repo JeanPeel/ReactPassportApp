@@ -51,11 +51,11 @@ class App extends Component {
         axios.put('/api/updateScore/' + id, { score: score + 1 })
             .then(resp => {
                 console.log(resp)
-                let HabitList = this.state.HabitList.map(Habit => {
-                    if (Habit._id === id) {
-                        Habit.score = score + 1
+                let HabitList = this.state.HabitList.map(habit => {
+                    if (habit._id === id) {
+                        habit.score = score + 1
                     }
-                    return Habit
+                    return habit
                 })
 
                 this.setState({

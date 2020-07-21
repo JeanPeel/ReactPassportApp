@@ -6,11 +6,11 @@ import { Collection } from 'mongoose';
 function SortedList(props) {
 const SortedList = props.SortedList;
 const ThisItem = SortedItem;
-const score = SortedList.score;
+// const score = SortedList.score;
 
 
 console.log('SortedItem on List', SortedItem)
-console.log('SCORE', score)
+// console.log('SCORE', score)
 console.log('SortedList: ', SortedList)
 
 return (
@@ -22,7 +22,7 @@ return (
             ThisItem={ThisItem}
             index={index}
             key={index}
-            score={ThisItem.score}
+            // score={ThisItem.score}
         />
         ))
     }   

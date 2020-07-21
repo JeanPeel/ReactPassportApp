@@ -7,23 +7,26 @@ export default function HabitItem(props) {
 const ThisItem = props.ThisItem;
 const MarkAsDone = props.MarkAsDone;
 const index = props.index;
-const score = ThisItem.score
+// const score = ThisItem.score
 
-console.log(score, 'score property')
+// console.log(score, 'score property')
 
 
 return (
 <div className="container">
     <div className="form-control">
         <div className="item">
-        {ThisItem.text} 
+        {/* {ThisItem.text}  */}
         
         </div>
-        <p>Score: {score} </p>
-<div className={ThisItem.done ? 'done' : ''}>
+        {/* <p>Score: {score} </p> */}
+{/* <div className={ThisItem.done ? 'done' : ''}> */}
+<div className='done'>
 <button
     type="button" 
-    onClick={() => MarkAsDone(score, ThisItem._id)} 
+    // onClick={() => MarkAsDone(ThisItem._id)} 
+    onClick={() => MarkAsDone()} 
+    // onClick={() => MarkAsDone(score, ThisItem._id)} 
     value={index}
     className="btn"
     >Done</button>

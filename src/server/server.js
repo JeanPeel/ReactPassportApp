@@ -24,6 +24,8 @@ initializePassport(
   id => users.find(user => user.id === id)
 )
 
+const users = []
+
 mongoose.Promise = global.Promise;
 
 let MONGODB_URI = process.env.NODE_ENV

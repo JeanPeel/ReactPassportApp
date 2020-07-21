@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 var HabitSchema = new Schema({
     text: String,
     done: String,
-    score: {type: Number, default: 0}
+    // score: {type: Number, default: 0}
 });
 
 const Habit = mongoose.model('Habit', HabitSchema);

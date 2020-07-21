@@ -15,9 +15,9 @@ class Leaderboard extends Component {
         SortedItem: '',
         SortedList: [
             {
-                text: 'Display to do item',
+                text: 'Display to habit item',
                 done: true,
-                score: 0
+                // score: 0
             }
         ]
     };
@@ -28,7 +28,7 @@ class Leaderboard extends Component {
             .get('/api/sortedHabits')
             .then((response) => {
                 response.data.sort(function (Habit1, Habit2) {
-                    return Habit2.score - Habit1.score
+                    // return Habit2.score - Habit1.score
 
                 })
                 this.setState({ SortedList: response.data });

@@ -19,7 +19,7 @@ class Form extends Component {
       {
         text: 'Display to do item',
         done: true,
-        score: 0
+        // score: 0
       }
     ]
   };
@@ -41,7 +41,7 @@ class Form extends Component {
     const newHabit = {
       text: this.state.ThisItem,
       done: false,
-      score: 0
+      // score: 0
     }
 
     axios
@@ -60,7 +60,7 @@ class Form extends Component {
     const index = event.target.value;
     let ThisItem = this.state.HabitList[index];
     ThisItem.done = !ThisItem.done;
-    let score = this.state.score;
+    // let score = this.state.score;
 
     this.setState({
       HabitList: this.state.HabitList
