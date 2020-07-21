@@ -64,9 +64,9 @@ app.post("/HabitNexus", (request, response) => {
 });
 
 app.put('/api/updateScore/:id', function (req, res) {
-  //Habit.update()
+  //Habit.update()     // put route /api/
   console.log(`
-          put route /api/
+      
           
           req.body :${JSON.stringify(req.body)}
           req.params: ${req.params.id}
@@ -77,10 +77,10 @@ app.put('/api/updateScore/:id', function (req, res) {
       })
 
 })
-
+// sorted get route /api/
 app.get('/api/sortedHabits', function (req, res) {
   console.log(`
-          sorted get route /api/
+          
           
           req.body :${JSON.stringify(req.body)}
           req.params: ${req.params.id}

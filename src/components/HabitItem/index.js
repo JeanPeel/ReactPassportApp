@@ -4,10 +4,10 @@ import "./style.css";
 
 
 export default function HabitItem(props) {
-const HabitItem = props.HabitItem;
+const ThisItem = props.ThisItem;
 const MarkAsDone = props.MarkAsDone;
 const index = props.index;
-const score = HabitItem.score
+const score = ThisItem.score
 
 console.log(score, 'score property')
 
@@ -16,14 +16,14 @@ return (
 <div className="container">
     <div className="form-control">
         <div className="item">
-        {HabitItem.text} 
+        {ThisItem.text} 
         
         </div>
         <p>Score: {score} </p>
-<div className={HabitItem.done ? 'done' : ''}>
+<div className={ThisItem.done ? 'done' : ''}>
 <button
     type="button" 
-    onClick={() => MarkAsDone(score, HabitItem._id)} 
+    onClick={() => MarkAsDone(score, ThisItem._id)} 
     value={index}
     className="btn"
     >Done</button>

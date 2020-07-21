@@ -6,11 +6,11 @@ import { Collection } from 'mongoose';
 function HabitList(props) {
 const HabitList = props.HabitList;
 const MarkAsDone = props.MarkAsDone;
-const HabitItem = HabitItem;
+const ThisItem = HabitItem;
 const score = HabitList.score
 
 
-console.log('To Do Item', HabitItem)
+console.log('HabitItem Item', HabitItem)
 console.log('SCORE', score)
 console.log('HabitList: ', HabitList)
 
@@ -20,11 +20,11 @@ return (
     {
         HabitList.map((HabitItem, index) => (
         <HabitItem
-            HabitItem={HabitItem}
+            ThisItem={ThisItem}
             MarkAsDone={MarkAsDone}
             index={index}
             key={index}
-            score={HabitItem.score}
+            score={ThisItem.score}
         />
         ))
     }   

@@ -13,7 +13,7 @@ import "./style.css";
 class App extends Component {
 
     state = {
-        HabitItem: '',
+        ThisItem: '',
         HabitList: [
             {
                 text: 'Display to do item',

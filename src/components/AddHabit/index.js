@@ -3,7 +3,7 @@ import "./style.css"
 
 
 export default function AddHabit(props) {
-const HabitItem = props.HabitItem;
+const ThisItem = props.ThisItem;
 const updateHabitItem = props.updateHabitItem;
 const saveHabitItem = props.saveHabitItem;
 
@@ -15,9 +15,9 @@ return (
         <label htmlFor="name"><h2>What Habit are you working on today?</h2></label><br></br>
         <input
         type="text"
-        name="HabitItem"
+        name="ThisItem"
         placeholder="i.e. stop biting nails"
-        value={HabitItem}
+        value={ThisItem}
         onChange={updateHabitItem}
         className="form-control"
         />

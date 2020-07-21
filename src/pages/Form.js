@@ -14,7 +14,7 @@ class Form extends Component {
 
 
   state = {
-    HabitItem: '',
+    ThisItem: '',
     HabitList: [
       {
         text: 'Display to do item',
@@ -39,7 +39,7 @@ class Form extends Component {
     event.preventDefault();
 
     const newHabit = {
-      text: this.state.HabitItem,
+      text: this.state.ThisItem,
       done: false,
       score: 0
     }
@@ -51,15 +51,15 @@ class Form extends Component {
 
     this.setState({
       HabitList: this.state.HabitList.concat(newHabit),
-      HabitItem: ''
+      ThisItem: ''
     })
 
   }
 
   markAsDone = (event) => {
     const index = event.target.value;
-    let HabitItem = this.state.HabitList[index];
-    HabitItem.done = !HabitItem.done;
+    let ThisItem = this.state.HabitList[index];
+    ThisItem.done = !ThisItem.done;
     let score = this.state.score;
 
     this.setState({
@@ -79,7 +79,7 @@ class Form extends Component {
 
             <h1>Add Habit</h1>
             <AddHabit
-              HabitItem={this.state.HabitItem}
+              ThisItem={this.state.ThisItem}
               updateHabitItem={this.updateHabitItem}
               saveHabitItem={this.saveHabitItem}
             />
