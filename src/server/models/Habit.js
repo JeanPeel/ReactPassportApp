@@ -7,5 +7,5 @@ var HabitSchema = new Schema({
     score: {type: Number, default: 0}
 });
 
-const Habit = mongoose.model('habit', HabitSchema);
+const Habit = mongoose.model('Habit', HabitSchema);
 module.exports = Habit;

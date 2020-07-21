@@ -27,8 +27,8 @@ class Leaderboard extends Component {
         axios
             .get('/api/sortedHabits')
             .then((response) => {
-                response.data.sort(function (habit1, habit2) {
-                    return habit2.score - habit1.score
+                response.data.sort(function (Habit1, Habit2) {
+                    return Habit2.score - Habit1.score
 
                 })
                 this.setState({ SortedList: response.data });

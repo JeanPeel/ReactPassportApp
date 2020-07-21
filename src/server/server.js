@@ -28,7 +28,7 @@ mongoose.Promise = global.Promise;
 
 let MONGODB_URI = process.env.NODE_ENV
     ? process.env.MONGODB_URI
-    : "mongodb://localhost/HabitTracker";
+    : "mongodb://localhost/HabitNexus";
     // : "mongodb://<dbuser>:<dbpassword>@ds141490.mlab.com:41490/heroku_bwqsgrdb";
 
 mongoose.connect(MONGODB_URI, {
@@ -44,7 +44,7 @@ app.use(express.static("client/build"));
 
 app.delete("/:id", (request, response) => {
   const mongoID = request.params.id;
-  ToDo.remove({
+  Habit.remove({
       _id: mongoID,
   })
       .then((data) => {
@@ -55,7 +55,7 @@ app.delete("/:id", (request, response) => {
       });
 });
 
-app.post("/HabitTracker", (request, response) => {
+app.post("/HabitNexus", (request, response) => {
   const HabitData = request.body;
   console.log('is this working?', HabitData)
   Habit.create(HabitData, function () {
@@ -99,7 +99,7 @@ app.get('/api/sortedHabits', function (req, res) {
 
 });
 
-app.get("/HabitTracker", (request, response) => {
+app.get("/HabitNexus", (request, response) => {
   Habit.find({})
       .then(function (data) {
           response.status(200).json(data);

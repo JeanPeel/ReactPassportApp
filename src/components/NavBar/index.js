@@ -15,8 +15,8 @@ function NavBar() {
                     <ul className="navbar-nav">
                         <li className="nav-item">
                             <Link
-                                to="/habits"
-                                className={window.location.pathname === "/habits" ? "nav-link active" : "nav-link"}
+                                to="/Habits"
+                                className={window.location.pathname === "/Habits" ? "nav-link active" : "nav-link"}
                             > Habits</Link>
                         </li>
                         <li className="nav-item">

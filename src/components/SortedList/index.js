@@ -5,7 +5,7 @@ import { Collection } from 'mongoose';
 
 function SortedList(props) {
 const SortedList = props.SortedList;
-const toDoItem = SortedItem;
+const HabitItem = SortedItem;
 const score = SortedList.score;
 
 
@@ -17,12 +17,12 @@ return (
 <div>
     
     {
-        SortedList.map((toDoItem, index) => (
+        SortedList.map((HabitItem, index) => (
         <SortedItem
-            toDoItem={toDoItem}
+            HabitItem={HabitItem}
             index={index}
             key={index}
-            score={toDoItem.score}
+            score={HabitItem.score}
         />
         ))
     }   

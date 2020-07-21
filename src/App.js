@@ -21,7 +21,7 @@ function App() {
         <Route exact path="/account" component={Account} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
-        <Route exact path="/habits" component={Habits} />
+        <Route exact path="/Habits" component={Habits} />
       <Route exact path="/form" component={Form} />
       <Route exact path="/leaderboard" component={Leaderboard} />
       </div>

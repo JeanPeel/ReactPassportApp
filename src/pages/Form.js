@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import AddToDo from "../components/AddToDo";
-// import ToDoList from "../components/ToDoList";
+import AddHabit from "../components/AddHabit";
+// import HabitList from "../components/HabitList";
 
 import axios from 'axios';
 import "./style.css";
@@ -14,8 +14,8 @@ class Form extends Component {
 
 
   state = {
-    toDoItem: '',
-    toDoList: [
+    HabitItem: '',
+    HabitList: [
       {
         text: 'Display to do item',
         done: true,
@@ -24,7 +24,7 @@ class Form extends Component {
     ]
   };
 
-  updateToDoItem = (event) => {
+  updateHabitItem = (event) => {
     const { name, value } = event.target;
 
     this.setState({
@@ -34,36 +34,36 @@ class Form extends Component {
 
 
 
-  saveToDoItem = (event) => {
+  saveHabitItem = (event) => {
 
     event.preventDefault();
 
     const newHabit = {
-      text: this.state.toDoItem,
+      text: this.state.HabitItem,
       done: false,
       score: 0
     }
 
     axios
-      .post("/HabitTracker", newHabit)
+      .post("/HabitNexus", newHabit)
       .catch((error) => console.log(error));
 
 
     this.setState({
-      toDoList: this.state.toDoList.concat(newHabit),
-      toDoItem: ''
+      HabitList: this.state.HabitList.concat(newHabit),
+      HabitItem: ''
     })
 
   }
 
   markAsDone = (event) => {
     const index = event.target.value;
-    let toDoItem = this.state.toDoList[index];
-    toDoItem.done = !toDoItem.done;
+    let HabitItem = this.state.HabitList[index];
+    HabitItem.done = !HabitItem.done;
     let score = this.state.score;
 
     this.setState({
-      toDoList: this.state.toDoList
+      HabitList: this.state.HabitList
     })
   }
 
@@ -78,14 +78,14 @@ class Form extends Component {
           <div className="container fixBottom">
 
             <h1>Add Habit</h1>
-            <AddToDo
-              toDoItem={this.state.toDoItem}
-              updateToDoItem={this.updateToDoItem}
-              saveToDoItem={this.saveToDoItem}
+            <AddHabit
+              HabitItem={this.state.HabitItem}
+              updateHabitItem={this.updateHabitItem}
+              saveHabitItem={this.saveHabitItem}
             />
 
-            {/* <ToDoList
-          toDoList={this.state.toDoList}
+            {/* <HabitList
+          HabitList={this.state.HabitList}
           markAsDone={this.markAsDone}
         /> */}
           </div>

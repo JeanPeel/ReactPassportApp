@@ -6,14 +6,14 @@ import NavBar from "../components/NavBar";
 import Header from "../components/Header";
 import Wrapper from "../components/Wrapper";
 import Footer from "../components/Footer";
-import ToDoItem from '../components/ToDoItem';
+import HabitItem from '../components/HabitItem';
 
 import "./style.css";
 
 class App extends Component {
 
     state = {
-        toDoItem: '',
+        HabitItem: '',
         HabitList: [
             {
                 text: 'Display to do item',
@@ -25,7 +25,7 @@ class App extends Component {
 
     componentDidMount() {
         axios
-            .get('/HabitTracker')
+            .get('/HabitNexus')
             .then((response) => {
                 this.setState({ HabitList: response.data });
             })
@@ -34,7 +34,7 @@ class App extends Component {
             })
     }
 
-    updateToDoItem = (event) => {
+    updateHabitItem = (event) => {
         const { name, value } = event.target;
 
         this.setState({
@@ -51,11 +51,11 @@ class App extends Component {
         axios.put('/api/updateScore/' + id, { score: score + 1 })
             .then(resp => {
                 console.log(resp)
-                let HabitList = this.state.HabitList.map(habit => {
-                    if (habit._id === id) {
-                        habit.score = score + 1
+                let HabitList = this.state.HabitList.map(Habit => {
+                    if (Habit._id === id) {
+                        Habit.score = score + 1
                     }
-                    return habit
+                    return Habit
                 })
 
                 this.setState({

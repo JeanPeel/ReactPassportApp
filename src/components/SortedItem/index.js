@@ -3,22 +3,22 @@ import { Collection } from 'mongoose';
 
 
 export default function SortedItem(props) {
-const toDoItem = props.toDoItem;
+const HabitItem = props.HabitItem;
 const index = props.index;
-const score = toDoItem.score
+const score = HabitItem.score
 
 // console.log('SortedItem: ', SortedItem);
-// console.log('toDoItem on Sorted: ', toDoItem);
+// console.log('HabitItem on Sorted: ', HabitItem);
 
 return (
 <div className="container">
     <div className="form-control">
         <div className="item">
-        {toDoItem.text} 
+        {HabitItem.text} 
         
         </div>
         <p>Score: {score} </p>
-<div className={toDoItem.done ? 'done' : ''}>
+<div className={HabitItem.done ? 'done' : ''}>
 
 </div>
 </div>

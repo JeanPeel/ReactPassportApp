@@ -6,7 +6,7 @@ function Header() {
         <div>
             <div className="container">
                 <div className="logo">
-                     <img src={require("../../Images/habitTracker.gif")} alt="loading"  />
+                     <img src={require("../../Images/HabitNexus.gif")} alt="loading"  />
                 </div>
             </div>
         </div>
