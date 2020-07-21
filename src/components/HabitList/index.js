@@ -6,11 +6,12 @@ import { Collection } from 'mongoose';
 function HabitList(props) {
 const HabitList = props.HabitList;
 const MarkAsDone = props.MarkAsDone;
-const ThisItem = HabitItem;
+const ThisItem = props.ThisItem;
 const score = HabitList.score
 
 
 console.log('HabitItem Item', HabitItem)
+console.log('ThisItem Item', ThisItem)
 console.log('SCORE', score)
 console.log('HabitList: ', HabitList)
 
